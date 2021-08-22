@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="home">
     <h1>Wat gaan we eten vandaag?</h1>
-    <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" />
+    <div class="recipes">
+      <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" />
+    </div>
   </div>
 </template>
 
@@ -23,7 +25,8 @@ export default {
 };
 </script>
 <style scoped>
-div {
-  background-color: pink;
+.recipes {
+  display: flex;
+  align-items: center;
 }
 </style>

@@ -1,6 +1,12 @@
 <template>
-  <div class="recipe-card">
-    <h4>{{ recipe.name }}</h4>
+  <div
+    class="recipe-card"
+    @click="
+      selectRecipe();
+      $router.push('/recepten');
+    "
+  >
+    <h2>{{ recipe.name }}</h2>
     <p>{{ recipe.preparationTime }}</p>
     <p>{{ recipe.quantity }}</p>
   </div>
@@ -14,6 +20,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    selectRecipe() {
+      return this.$store.commit("setSelectedRecipe", this.recipe);
+    }
   }
 };
 </script>
@@ -21,7 +32,9 @@ export default {
 <style scoped>
 .recipe-card {
   padding: 20px;
+  margin: 5px;
   width: 75%;
+  background-color: white;
 }
 .recipe-card:hover {
   transform: scale(1.01);
