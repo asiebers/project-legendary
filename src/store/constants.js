@@ -1,4 +1,4 @@
-recipes: [
+[
   {
     id: 1,
     name: "Vegetarische gadverdamme Lasagne",
