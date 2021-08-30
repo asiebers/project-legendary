@@ -7,6 +7,7 @@
     "
   >
     <h2>{{ recipe.name }}</h2>
+    <img :src="getImgUrl(recipe.img)" style="width: 100%; height: 100%;" />
     <p>{{ recipe.preparationTime }}</p>
     <p>{{ recipe.quantity }}</p>
   </div>
@@ -19,11 +20,18 @@ export default {
     recipe: Object
   },
   data() {
-    return {};
+    return {
+      image: "@/assets/lasagne.jpeg"
+    };
   },
+  computed: {},
   methods: {
     selectRecipe() {
       return this.$store.commit("setSelectedRecipe", this.recipe);
+    },
+    getImgUrl(pic) {
+      console.log(pic);
+      return require("@/assets/" + pic);
     }
   }
 };
@@ -33,8 +41,6 @@ export default {
 .recipe-card {
   padding: 20px;
   margin: 5px;
-  width: 75%;
-  background-color: white;
 }
 .recipe-card:hover {
   transform: scale(1.01);
