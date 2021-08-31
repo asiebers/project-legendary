@@ -11,7 +11,7 @@
     </div>
     <h2>Bereidingswijze</h2>
     <div class="recipe-block directions">
-      <p>Hier komt de bereidingswijze</p>
+      <p>Hier komt de bereidingswijze te staan</p>
     </div>
   </div>
 </template>
