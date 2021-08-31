@@ -1,7 +1,13 @@
 <template>
   <div class="recipe">
-    <h2>Ingredienten</h2>
-    <div class="recipe-block ingredients">
+    <div class="recipe-header">
+      <h2>{{ recipe.name }}</h2>
+      <img :src="getImgUrl(recipe.image)" class="image-header" />
+      <p>{{ recipe.preparationTime }}</p>
+      <p>{{ recipe.quantity }}</p>
+    </div>
+    <div class="recipe-ingredients">
+      <h2>Ingredienten</h2>
       <div>
         <li v-for="ingredient in ingredients" :key="ingredient.name">
           {{ ingredient.name }}, {{ ingredient.quantity }}
@@ -10,7 +16,7 @@
       </div>
     </div>
     <h2>Bereidingswijze</h2>
-    <div class="recipe-block directions">
+    <div>
       <p>Hier komt de bereidingswijze te staan</p>
     </div>
   </div>
@@ -22,14 +28,31 @@ export default {
   data() {
     return {};
   },
+  props: {
+    recipe: Object
+  },
   computed: {
-    recipe() {
-      return this.$store.state.selectedRecipe;
-    },
     ingredients() {
       return this.recipe.ingredients;
+    }
+  },
+  methods: {
+    getImgUrl(image) {
+      return require("@/assets/" + image);
     }
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+.recipe {
+  background-color: floralwhite;
+}
+.recipe-header {
+  padding: 20px;
+  margin: 5px;
+}
+.image-header {
+  max-width: 100%;
+  max-height: 400px;
+}
+</style>

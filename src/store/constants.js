@@ -5,7 +5,7 @@ export default {
       name: "Vegetarische lasagne",
       preparationTime: "90 minuten",
       quantity: "3 - 4 personen",
-      img: "lasagne.jpeg",
+      image: "lasagne.jpeg",
       ingredients: [
         {
           name: "Lasagnebladen",
@@ -26,14 +26,14 @@ export default {
       name: "Penne Carbonara",
       preparationTime: "30 minuten",
       quantity: "3 - 4 personen",
-      img: "carbonara.jpeg"
+      image: "carbonara.jpeg"
     },
     {
       id: 3,
       name: "Thaise rode curry",
       preparationTime: "60 minuten",
       quantity: "4 personen",
-      img: "thais.jpeg"
+      image: "thais.jpeg"
     }
   ]
 };

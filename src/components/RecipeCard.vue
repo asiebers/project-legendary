@@ -7,7 +7,7 @@
     "
   >
     <h2>{{ recipe.name }}</h2>
-    <img :src="getImgUrl(recipe.img)" style="width: 100%; height: 100%;" />
+    <img :src="getImgUrl(recipe.image)" style="width: 100%; height: 100%;" />
     <p>{{ recipe.preparationTime }}</p>
     <p>{{ recipe.quantity }}</p>
   </div>
@@ -20,18 +20,15 @@ export default {
     recipe: Object
   },
   data() {
-    return {
-      image: "@/assets/lasagne.jpeg"
-    };
+    return {};
   },
   computed: {},
   methods: {
     selectRecipe() {
       return this.$store.commit("setSelectedRecipe", this.recipe);
     },
-    getImgUrl(pic) {
-      console.log(pic);
-      return require("@/assets/" + pic);
+    getImgUrl(image) {
+      return require("@/assets/" + image);
     }
   }
 };
