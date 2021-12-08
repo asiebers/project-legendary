@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Foto Annemiek" src="../assets/Annemiek.jpeg" />
-    <HelloWorld msg="Welcome to Annemiek's App" />
+    <h1>Wat gaan we eten vandaag?</h1>
+    <div class="recipes">
+      <RecipeCard v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import RecipeCard from "@/components/RecipeCard.vue";
+import constants from "../store/constants.js";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    RecipeCard
+  },
+  data() {
+    return {
+      recipes: constants.recipes
+    };
   }
 };
 </script>
+<style scoped>
+.recipes {
+  display: flex;
+  align-items: center;
+}
+</style>
