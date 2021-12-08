@@ -1,0 +1,34 @@
+.DS_Store
+node_modules
+/dist
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+
+# Opzetten Github
+# 1. github repository (link naar github bij stap 3 nodig)
+# 2. openen vue.js project in Visual code
+# 3. in terminal IDE: git remote add origin <github link>
+# 4. git branch -M main
+# 5. it push -u origin main
+# 6. git config --global user.email "asiebers1992@gmail.com"
+# 7. git config --global user.name "A. Siebers" 
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
